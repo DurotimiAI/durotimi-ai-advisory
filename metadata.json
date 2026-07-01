@@ -1,0 +1,6 @@
+{
+  "name": "Durotimi AI Advisory",
+  "description": "Strategic advisory and healthcare transformation practice helping healthcare leaders move from AI ambition to responsible implementation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
