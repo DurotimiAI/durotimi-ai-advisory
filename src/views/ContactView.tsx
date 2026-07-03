@@ -28,6 +28,7 @@ export default function ContactView({ selectedConsultation, onClearConsultation 
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Sync state if selectedConsultation prop changes
   useEffect(() => {
@@ -70,29 +71,46 @@ export default function ContactView({ selectedConsultation, onClearConsultation 
     const errors = validateForm();
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
+      setSubmitError(null);
       const firstErrorEl = document.getElementById('contact-form-section');
       if (firstErrorEl) firstErrorEl.scrollIntoView({ behavior: 'smooth' });
       return;
     }
+
     setIsSubmitting(true);
-  
-    const portalId = "148583851";
-    const formGuid = "c9c21395-591a-416b-9e5f-0d27a7fd59e0";
-    const response = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        fields: [
-          { name: "email", value: formData.email },
-          { name: "firstname", value: formData.name },
-          { name: "company", value: formData.organisation },
-          { name: "jobtitle", value: formData.role },
-          { name: "country", value: formData.country },
-          { name: "message", value: formData.message },
-          { name: "consultation_type", value: formData.consultationType }
-        ]
-      })
-    });
+    setSubmitError(null);
+
+    try {
+      const portalId = "148583851";
+      const formGuid = "c9c21395-591a-416b-9e5f-0d27a7fd59e0";
+      const response = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fields: [
+            { name: "email", value: formData.email },
+            { name: "firstname", value: formData.name },
+            { name: "company", value: formData.organisation },
+            { name: "jobtitle", value: formData.role },
+            { name: "country", value: formData.country },
+            { name: "message", value: formData.message },
+            { name: "consultation_type", value: formData.consultationType }
+          ]
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`Submission failed with status ${response.status}`);
+      }
+
+      setIsSubmitted(true);
+      setFormErrors({});
+    } catch (error) {
+      console.error('Contact form submission failed:', error);
+      setSubmitError('Your message could not be sent right now. Please try again or contact us directly at advisory@durotimi.ai.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleResetForm = () => {
@@ -108,6 +126,7 @@ export default function ContactView({ selectedConsultation, onClearConsultation 
     });
     setFormErrors({});
     setIsSubmitted(false);
+    setSubmitError(null);
   };
 
   const consultationTypes = [
@@ -351,6 +370,9 @@ export default function ContactView({ selectedConsultation, onClearConsultation 
                       <span>Submit Inquiry</span>
                     )}
                   </button>
+                  {submitError && (
+                    <p className="mt-3 text-[11px] text-red-600 text-center">{submitError}</p>
+                  )}
                   <span className="block text-[10px] text-gray-400 font-mono mt-3 text-center">
                     Confidential &bull; Fully compliant with global EMR security best practices.
                   </span>
