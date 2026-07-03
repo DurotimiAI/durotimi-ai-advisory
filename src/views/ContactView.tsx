@@ -65,7 +65,7 @@ export default function ContactView({ selectedConsultation, onClearConsultation 
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errors = validateForm();
     if (Object.keys(errors).length > 0) {
@@ -74,26 +74,25 @@ export default function ContactView({ selectedConsultation, onClearConsultation 
       if (firstErrorEl) firstErrorEl.scrollIntoView({ behavior: 'smooth' });
       return;
     }
-
-    const submitToHubSpot = async () => {
-  const portalId = "148583851";
-  const formGuid = "c9c21395-591a-416b-9e5f-0d27a7fd59e0";
-  const response = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      fields: [
-        { name: "email", value: formData.email },
-        { name: "firstname", value: formData.name },
-        { name: "company", value: formData.organisation },
-        { name: "jobtitle", value: formData.role },
-        { name: "country", value: formData.country },
-        { name: "message", value: formData.message },
-        { name: "consultation_type", value: formData.consultationType }
-      ]
-    })
-  });
-};
+    setIsSubmitting(true);
+  
+    const portalId = "148583851";
+    const formGuid = "c9c21395-591a-416b-9e5f-0d27a7fd59e0";
+    const response = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fields: [
+          { name: "email", value: formData.email },
+          { name: "firstname", value: formData.name },
+          { name: "company", value: formData.organisation },
+          { name: "jobtitle", value: formData.role },
+          { name: "country", value: formData.country },
+          { name: "message", value: formData.message },
+          { name: "consultation_type", value: formData.consultationType }
+        ]
+      })
+    });
   };
 
   const handleResetForm = () => {
