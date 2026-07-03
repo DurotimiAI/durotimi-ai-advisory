@@ -191,16 +191,16 @@ export default function InsightsView({ onPageChange, onSelectConsultation }: Ins
                     onClick={() => setSelectedInsight(item.id)}
                     className="text-xs font-semibold text-[#1B75BB] group-hover:text-[#071B33] flex items-center gap-1 focus:outline-none"
                   >
-                    <span>Read Full Briefing</span>
+                    <span>Read {/*Full*/} Briefing</span>
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                   </button>
-                  <button
+                  {/* <button
                     onClick={() => handleDownload(item.title)}
                     className="text-gray-400 hover:text-[#1B75BB] focus:outline-none"
                     title="Download Briefing PDF"
                   >
                     <Download className="h-4 w-4" />
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}
@@ -249,14 +249,14 @@ export default function InsightsView({ onPageChange, onSelectConsultation }: Ins
                   <span className="text-[10px] uppercase font-mono text-gray-400 block">Publication Citation</span>
                   <p className="text-xs text-gray-500 font-medium">Durotimi AI Advisory Briefings Group &bull; Ireland | USA | Nigeria</p>
                 </div>
-                <button
+                {/* <button
                   onClick={() => handleDownload(activeInsight.title)}
                   disabled={downloadState === 'downloading'}
                   className="bg-[#071B33] hover:bg-[#071B33]/90 text-white text-xs font-semibold px-4.5 py-2.5 rounded transition-all flex items-center gap-1.5 shrink-0 focus:outline-none cursor-pointer"
                 >
                   <Download className="h-3.5 w-3.5" />
                   <span>Download Local PDF</span>
-                </button>
+                </button> */}
               </div>
             </div>
 
