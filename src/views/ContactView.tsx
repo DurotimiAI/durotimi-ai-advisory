@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { jsx as _jsx } from 'react/jsx-runtime';
 import { Mail, Globe, Linkedin, CheckCircle2, AlertCircle, Sparkles, Building, MapPin } from 'lucide-react';
 import { ContactInquiry } from '../types';
 
