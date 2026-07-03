@@ -205,8 +205,8 @@ export default function ContactView({ selectedConsultation, onClearConsultation 
               <span className="text-[10px] uppercase font-mono tracking-widest text-[#1B75BB] font-bold block">Direct Channels</span>
               <p className="text-gray-500">For generic corporate inquires or press releases:</p>
               <div className="space-y-2 font-mono">
-                <p>Email: <a href="mailto:advisory@durotimi.ai" className="text-[#1B75BB] hover:underline">advisory@durotimi.ai</a></p>
-                <p>Website: <a href="https://www.durotimi.ai" target="_blank" rel="noreferrer" className="text-[#1B75BB] hover:underline">www.durotimi.ai</a></p>
+                <p>Email: <a href="mailto:advisory@durotimi.com" className="text-[#1B75BB] hover:underline">advisory@durotimi.com</a></p>
+                <p>Website: <a href="https://www.durotimiai-advisory.com" target="_blank" rel="noreferrer" className="text-[#1B75BB] hover:underline">www.durotimiai-advisory.com</a></p>
               </div>
             </div>
           </div>
