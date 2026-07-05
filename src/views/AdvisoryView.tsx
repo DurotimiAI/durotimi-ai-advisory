@@ -121,7 +121,7 @@ export default function AdvisoryView({ onPageChange, onSelectConsultation }: Adv
               <span className="text-[10px] font-mono uppercase text-gray-400 block">Division 1</span>
               <h3 className="text-lg font-serif font-bold text-[#071B33] mt-1">Durotimi AI Technologies Ltd</h3>
               <p className="text-xs md:text-sm text-gray-500 mt-2 leading-relaxed">
-                The core technology division focused on advanced software systems, oncology registry development, and federated machine-learning research. This division focuses on constructing the foundational pipelines and data engines.
+                The core technology division focused on AI-enabled clinical intelligence for earlier cancer detection. Durotimi AI combines clinical data, explainable machine learning and implementation science to support healthcare professionals across the cancer detection pathway.
               </p>
             </div>
             
