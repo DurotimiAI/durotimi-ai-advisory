@@ -9,7 +9,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'executive-strategy',
     title: 'Executive AI Strategy',
-    description: 'Helping boards, ministries and executive teams define practical AI priorities aligned with health system objectives.',
+    description: 'Board and ministry-level AI roadmaps tied to clinical outcomes, capital plans, and national health priorities, not vendor pitches.' {/*Helping boards, ministries and executive teams define practical AI priorities aligned with health system objectives.'*/},
     buyerProblem: 'Boards and executive teams often have high AI ambition but lack a clear, actionable roadmap aligned with health systems, regulatory pathways, and patient outcomes.',
     whatWeDo: 'We support leadership teams in defining high-value use cases, analyzing resource trade-offs, establishing clinical AI charters, and aligning investment portfolios with healthcare strategies.',
     deliverables: [
