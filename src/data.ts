@@ -24,7 +24,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'transformation-diagnostic',
     title: 'AI Transformation Diagnostic',
-    description: 'A rapid diagnostic for organisations seeking clarity on AI opportunities, risks and next steps.',
+    description: 'Four-week sprints that map the live AI footprint, surface governance gaps, and rank interventions by risk-adjusted impact.' {/*A rapid diagnostic for organisations seeking clarity on AI opportunities, risks and next steps.'*/},
     buyerProblem: 'Leadership teams need rapid, objective clarity on where they stand, what immediate opportunities exist, and where structural bottlenecks lie.',
     whatWeDo: 'We conduct a rapid, high-impact clinical, technological, and operational scan to identify immediate low-hanging fruit and long-term priority areas.',
     deliverables: [
@@ -39,7 +39,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'readiness-assessment',
     title: 'AI Readiness Assessment',
-    description: 'Assessing governance, data maturity, infrastructure, clinical workflows, cybersecurity and implementation capability.',
+    description: 'Structured evaluation of data infrastructure, workforce capability, regulatory posture, and ethics oversight before scale-up.' {/* Assessing governance, data maturity, infrastructure, clinical workflows, cybersecurity and implementation capability.'*/},
     buyerProblem: 'Organizations risk failing or causing harm by adopting complex AI systems before their data, security, clinical workflows, and staff are ready.',
     whatWeDo: 'We perform a structured, multi-disciplinary assessment across five dimensions: data governance, technical infrastructure, clinical safety, workflow integration, and workforce capability.',
     deliverables: [
@@ -54,7 +54,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'cancer-data',
     title: 'Cancer Data Transformation',
-    description: 'Designing modern cancer data systems, registry modernization frameworks and data governance models.',
+    description: 'Oncology registry, pathology, and population-data architectures designed for AI training, auditability, and cross-border research.' {*/Designing modern cancer data systems, registry modernization frameworks and data governance models.'*/},
     buyerProblem: 'Oncology data is severely fragmented, unstructured, locked in legacy siloes, and prone to formatting inconsistencies, hindering early detection and research.',
     whatWeDo: 'We design modern cancer data schemas, registry modernization frameworks, secure interoperability standards, and multi-institutional data governance models.',
     deliverables: [
@@ -84,7 +84,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'clinical-implementation',
     title: 'Clinical AI Implementation',
-    description: 'Supporting responsible deployment of AI into clinical workflows through governance, adoption planning and performance measurement.',
+    description: 'From procurement to deployment to post-market monitoring; clinical AI programs that survive contact with frontline care.' {/* Supporting responsible deployment of AI into clinical workflows through governance, adoption planning and performance measurement.'*/},
     buyerProblem: 'Proven clinical AI tools often fail to deliver value because they disrupt physician workflows, trigger alert fatigue, or lack ongoing performance monitoring.',
     whatWeDo: 'We assist clinical leaders in designing human-in-the-loop workflows, setting up local safety committees, managing user adoption, and building metrics to measure actual clinical utility.',
     deliverables: [
